@@ -33,9 +33,9 @@
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200/30">
                             <thead>
-                                <tr class="text-left">
-                                    <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Category Name</th>
-                                    <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em] text-right">Actions</th>
+                                <tr class="text-left font-bold">
+                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Category Name</th>
+                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em] text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100/20">

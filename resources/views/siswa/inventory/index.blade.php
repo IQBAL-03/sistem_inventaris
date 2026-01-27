@@ -44,15 +44,14 @@
                 </div>
             @endif
 
-            <!-- Asset Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 @forelse($items as $item)
                     <div class="group relative bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-white/50 p-4 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.05)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                        <div class="relative h-56 rounded-[2rem] overflow-hidden bg-gray-100 mb-6">
+                        <div class="relative h-56 rounded-[2rem] overflow-hidden bg-gray-100 mb-6 font-bold">
                             @if($item->gambar)
                                 <img src="{{ asset('images/'.$item->gambar) }}" alt="{{ $item->nama_barang }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             @else
-                                <div class="w-full h-full flex items-center justify-center bg-indigo-50 text-indigo-200">
+                                <div class="w-full h-full flex items-center justify-center bg-indigo-50 text-indigo-300">
                                     <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
                                 </div>
                             @endif
@@ -62,13 +61,13 @@
                         </div>
 
                         <div class="px-3 pb-4 space-y-1">
-                            <h3 class="text-xl font-black text-gray-800 tracking-tight leading-tight">{{ $item->nama_barang }}</h3>
-                            <p class="text-gray-400 font-bold text-xs uppercase tracking-widest">{{ $item->merk }}</p>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight leading-tight">{{ $item->nama_barang }}</h3>
+                            <p class="text-gray-600 font-bold text-xs uppercase tracking-widest">{{ $item->merk }}</p>
                             
                             <div class="flex items-center justify-between pt-4 pb-6">
                                 <div class="flex flex-col">
-                                    <span class="text-[10px] text-gray-400 font-black uppercase tracking-widest">Available</span>
-                                    <span class="text-xl font-black {{ $item->stok > 0 ? 'text-indigo-600' : 'text-red-500' }}">{{ $item->stok }} Units</span>
+                                    <span class="text-[10px] text-gray-500 font-black uppercase tracking-widest">Available</span>
+                                    <span class="text-xl font-black {{ $item->stok > 0 ? 'text-indigo-600' : 'text-red-600' }}">{{ $item->stok }} Units</span>
                                 </div>
                             </div>
 
@@ -82,10 +81,10 @@
                     </div>
                 @empty
                     <div class="col-span-full py-20 text-center space-y-4 glass-card rounded-[2.5rem]">
-                        <div class="text-indigo-200">
+                        <div class="text-indigo-300">
                              <svg class="mx-auto w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                         </div>
-                        <p class="text-xl font-black text-gray-400 uppercase tracking-tighter">No assets found matching your criteria.</p>
+                        <p class="text-xl font-black text-gray-600 uppercase tracking-tighter">No assets found matching your criteria.</p>
                     </div>
                 @endforelse
             </div>

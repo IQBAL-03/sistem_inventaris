@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white/70 backdrop-blur-xl border-b border-white/30 sticky top-0 z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-20">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -12,25 +12,25 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-gray-800 font-bold tracking-tight">
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
                     @if(Auth::user()->role === 'admin')
-                        <x-nav-link :href="route('admin.items.index')" :active="request()->routeIs('admin.items.*')">
+                        <x-nav-link :href="route('admin.items.index')" :active="request()->routeIs('admin.items.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Barang') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
+                        <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Kategori') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')">
+                        <x-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Peminjaman') }}
                         </x-nav-link>
                     @else
-                        <x-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')">
+                        <x-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Katalog') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('siswa.borrowings.index')" :active="request()->routeIs('siswa.borrowings.*')">
+                        <x-nav-link :href="route('siswa.borrowings.index')" :active="request()->routeIs('siswa.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Riwayat') }}
                         </x-nav-link>
                     @endif
@@ -41,7 +41,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-4 font-bold rounded-full text-indigo-600 bg-indigo-50 hover:bg-indigo-100 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">

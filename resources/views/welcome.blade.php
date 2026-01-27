@@ -3,121 +3,142 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ config('app.name', 'Laravel') }} - Inventory System</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=outfit:400,600,800" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
             body { font-family: 'Outfit', sans-serif; }
-            .hero-mesh {
-                background-color: #f8fafc;
-                background-image: 
-                    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-                    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-                    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
-            }
         </style>
     </head>
-    <body class="antialiased text-white min-h-screen hero-mesh overflow-hidden relative">
-        <!-- Background Elements -->
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/30 rounded-full blur-[120px] animate-float"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-fuchsia-600/30 rounded-full blur-[120px] animate-float-delayed"></div>
-
-        <nav class="relative z-10 flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center p-2">
-                    <svg class="w-full text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                    </svg>
+    <body class="antialiased bg-gray-50 text-gray-900 min-h-screen flex flex-col font-sans">
+        
+        <!-- Navigation -->
+        <nav class="w-full py-4 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200 sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <x-application-logo class="w-9 h-9" />
+                    <span class="text-xl font-black tracking-tight text-blue-600">Inventaris<span class="text-gray-900">Lab</span></span>
                 </div>
-                <span class="text-2xl font-black tracking-tighter uppercase whitespace-nowrap">Inventaris<span class="text-indigo-400">PPLG</span></span>
-            </div>
-            <div class="flex items-center space-x-6">
-                @if (Route::has('login'))
+                <div class="flex items-center space-x-6">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="btn-gradient">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="font-bold text-gray-900 hover:text-blue-600 transition duration-300">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="font-medium hover:text-indigo-400 transition">Log in</a>
+                        <a href="{{ route('login') }}" class="font-bold text-gray-600 hover:text-blue-600 transition duration-300 text-sm">Masuk</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn-gradient">Get Started</a>
+                            <a href="{{ route('register') }}" class="py-2.5 px-5 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 transition duration-300 text-sm">Daftar Sekarang</a>
                         @endif
                     @endauth
-                @endif
+                </div>
             </div>
         </nav>
 
-        <main class="relative z-10 max-w-7xl mx-auto px-8 h-[calc(100vh-100px)] flex flex-col lg:flex-row items-center justify-between">
-            <div class="lg:w-1/2 text-center lg:text-left space-y-8">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-                    <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-200">New Lab Assets Available</span>
+        <!-- Hero Section -->
+        <main class="flex-grow flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Badge -->
+                <div class="inline-block bg-blue-100 border border-blue-200 px-6 py-2 rounded-full mb-4">
+                    <span class="text-blue-700 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        Sistem Manajemen Ruangan
+                    </span>
                 </div>
-                <h1 class="text-6xl lg:text-8xl font-black leading-[1.1] tracking-tight">
-                    Manage Assets <br> <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">With Precision.</span>
+                
+                <!-- Headline -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] text-gray-900">
+                    Kelola Ruangan <br>
+                    <span class="text-blue-600">Tanpa Ribet.</span>
                 </h1>
-                <p class="text-xl text-indigo-100/80 max-w-xl leading-relaxed">
-                    The ultimate laboratory asset management system. Track, borrow, and manage your equipment with a sleek, automated platform.
+
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Platform modern untuk booking ruangan rapat, aula, dan fasilitas Sekolah secara real-time. Efisiensi waktu Anda mulai dari sekarang.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="{{ route('login') }}" class="btn-gradient text-lg px-10 py-4 w-full sm:w-auto text-center">Start Borrowing</a>
-                    <a href="#" class="px-10 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-bold hover:bg-white/10 transition w-full sm:w-auto text-center">Learn More</a>
-                </div>
-            </div>
 
-            <div class="lg:w-1/2 mt-20 lg:mt-0 relative flex justify-center items-center">
-                <!-- Floating Card 1 -->
-                <div class="glass-card p-6 rounded-3xl w-72 absolute -top-10 -left-10 lg:left-20 animate-float">
-                    <div class="flex items-center space-x-4">
-                        <div class="p-3 bg-indigo-500/20 rounded-2xl text-indigo-400">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-gray-800">Approved</p>
-                            <p class="text-xs text-gray-500">MacBook Air M2</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Main Device Mockup -->
-                <div class="glass-card w-[450px] h-[300px] rounded-[40px] p-4 rotate-3 transform shadow-2xl relative overflow-hidden">
-                    <div class="w-full h-full bg-slate-900 rounded-[30px] overflow-hidden p-6 space-y-4">
-                        <div class="flex justify-between items-center border-b border-white/5 pb-4">
-                            <div class="w-20 h-4 bg-white/10 rounded"></div>
-                            <div class="flex space-x-2">
-                                <div class="w-4 h-4 bg-red-400 rounded-full"></div>
-                                <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
-                                <div class="w-4 h-4 bg-green-400 rounded-full"></div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="h-24 bg-indigo-500/20 rounded-2xl"></div>
-                            <div class="h-24 bg-purple-500/20 rounded-2xl"></div>
-                            <div class="col-span-2 h-20 bg-pink-500/20 rounded-2xl"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Floating Card 2 -->
-                <div class="glass-card p-6 rounded-3xl w-72 absolute -bottom-10 -right-10 lg:right-10 animate-float-delayed">
-                    <div class="flex items-center space-x-4">
-                        <div class="p-3 bg-fuchsia-500/20 rounded-2xl text-fuchsia-400">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-gray-800">Pending</p>
-                            <p class="text-xs text-gray-500">PC Gaming ROG</p>
-                        </div>
-                    </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="group w-full sm:w-auto px-8 py-4 bg-blue-600 text-white text-lg font-bold rounded-full hover:bg-blue-700 hover:shadow-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+                            Buka Dashboard
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="group w-full sm:w-auto px-8 py-4 bg-blue-600 text-white text-lg font-bold rounded-full hover:bg-blue-700 hover:shadow-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+                            Booking Sekarang
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </a>
+                        <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-white text-gray-900 border border-gray-200 text-lg font-bold rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all duration-300">
+                            Pelajari Lebih Lanjut
+                        </a>
+                    @endauth
                 </div>
             </div>
         </main>
 
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-white relative scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-4">
+                        Fitur Unggulan untuk <br> <span class="text-blue-600">Produktifitas</span> Anda
+                    </h2>
+                    <p class="text-gray-500 text-lg">
+                        Kami menyediakan berbagai fitur canggih yang dirancang khusus untuk mempermudah manajemen ruangan di organisasi Anda.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="group p-8 rounded-[2.5rem] bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-500">
+                        <div class="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Real-time Booking</h3>
+                        <p class="text-gray-500 leading-relaxed text-sm">
+                            Pesan ruangan secara instan dengan status ketersediaan yang selalu update setiap detik.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="group p-8 rounded-[2.5rem] bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-500">
+                        <div class="w-16 h-16 bg-indigo-100/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Manajemen Mudah</h3>
+                        <p class="text-gray-500 leading-relaxed text-sm">
+                            Dashboard admin yang intuitif untuk mengelola ruangan, pengguna, dan jadwal tanpa perlu pelatihan khusus.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="group p-8 rounded-[2.5rem] bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-500">
+                        <div class="w-16 h-16 bg-purple-100/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Keamanan Terjamin</h3>
+                        <p class="text-gray-500 leading-relaxed text-sm">
+                            Sistem verifikasi dan otorisasi yang ketat memastikan ruangan hanya digunakan oleh pihak yang berwenang.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Stats Footer -->
-        <div class="absolute bottom-8 left-0 w-full px-8 hidden lg:block">
-            <div class="max-w-7xl mx-auto flex space-x-20 text-indigo-200/50 uppercase tracking-[0.3em] text-[10px] font-black">
-                <span>/ 500+ Assets Tracked</span>
-                <span>/ 100% Secure Lending</span>
-                <span>/ Real-time Stock Sync</span>
+        <div class="w-full py-12 border-t border-gray-100 mt-12 bg-white">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h4 class="text-4xl font-black text-gray-900">3</h4>
+                    <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mt-1">Kategori Utama</p>
+                </div>
+                <div>
+                    <h4 class="text-4xl font-black text-gray-900">100+</h4>
+                    <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mt-1">Aset Tersedia</p>
+                </div>
+                <div>
+                    <h4 class="text-4xl font-black text-gray-900">24/7</h4>
+                    <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mt-1">Akses Sistem</p>
+                </div>
             </div>
         </div>
     </body>

@@ -12,10 +12,10 @@
                     <table class="min-w-full divide-y divide-gray-200/30">
                         <thead>
                             <tr class="text-left">
-                                <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Equipment</th>
-                                <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Quantity</th>
-                                <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Borrow Date</th>
-                                <th class="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Status</th>
+                                <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Equipment</th>
+                                <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Quantity</th>
+                                <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Borrow Date</th>
+                                <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Status</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100/20">
