@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $itemCount = \App\Models\Item::count();
+    $categoryCount = \App\Models\Category::count();
+    return view('welcome', compact('itemCount', 'categoryCount'));
 });
 
 Route::get('/dashboard', function () {
