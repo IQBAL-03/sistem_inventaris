@@ -17,7 +17,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Admin Routes
-Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('items', App\Http\Controllers\Admin\ItemController::class);
     Route::resource('categories', App\Http\Controllers\Admin\CategoryController::class);
@@ -25,10 +25,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/borrowings/{borrowing}/approve', [App\Http\Controllers\Admin\BorrowingController::class, 'approve'])->name('borrowings.approve');
     Route::post('/borrowings/{borrowing}/reject', [App\Http\Controllers\Admin\BorrowingController::class, 'reject'])->name('borrowings.reject');
     Route::post('/borrowings/{borrowing}/returned', [App\Http\Controllers\Admin\BorrowingController::class, 'returned'])->name('borrowings.returned');
+    
+    // Log Routes
+    Route::get('/logs', [App\Http\Controllers\Admin\LogController::class, 'index'])->name('logs.index');
+    Route::post('/logs/clear', [App\Http\Controllers\Admin\LogController::class, 'clear'])->name('logs.clear');
 });
 
 // Siswa Routes
-Route::middleware(['auth', 'role:siswa'])->prefix('siswa')->name('siswa.')->group(function () {
+Route::middleware(['auth', 'verified', 'role:siswa'])->prefix('siswa')->name('siswa.')->group(function () {
     Route::get('/inventory', [App\Http\Controllers\Siswa\InventoryController::class, 'index'])->name('inventory.index');
     Route::get('/borrowings', [App\Http\Controllers\Siswa\BorrowingController::class, 'index'])->name('borrowings.index');
     Route::post('/borrowings', [App\Http\Controllers\Siswa\BorrowingController::class, 'store'])->name('borrowings.store');

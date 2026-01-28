@@ -24,7 +24,7 @@ class BorrowingController extends Controller
         $item = \App\Models\Item::findOrFail($request->item_id);
 
         if ($item->stok < $request->jumlah) {
-            return back()->with('error', 'Insufficient stock.');
+            return back()->with('error', 'Stok tidak mencukupi.');
         }
 
         auth()->user()->borrowings()->create([
@@ -34,6 +34,6 @@ class BorrowingController extends Controller
             'status' => 'pending',
         ]);
 
-        return redirect()->route('siswa.borrowings.index')->with('success', 'Borrowing request submitted successfully.');
+        return redirect()->route('siswa.borrowings.index')->with('success', 'Pengajuan peminjaman berhasil dikirim!');
     }
 }

@@ -26,6 +26,9 @@
                         <x-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Peminjaman') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('admin.logs.index')" :active="request()->routeIs('admin.logs.*')" class="text-gray-800 font-bold tracking-tight">
+                            {{ __('Logs') }}
+                        </x-nav-link>
                     @else
                         <x-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Katalog') }}
@@ -99,6 +102,9 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')">
                     {{ __('Peminjaman') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.logs.index')" :active="request()->routeIs('admin.logs.*')">
+                    {{ __('Logs') }}
                 </x-responsive-nav-link>
             @else
                 <x-responsive-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')">

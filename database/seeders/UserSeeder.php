@@ -15,14 +15,16 @@ class UserSeeder extends Seeder
         \App\Models\User::create([
             'name' => 'Administrator',
             'email' => 'admin@gmail.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'email_verified_at' => now(),
+            'password' => \Illuminate\Support\Facades\Hash::make('Admin123'),
             'role' => 'admin',
         ]);
 
         \App\Models\User::create([
             'name' => 'Siswa PPLG',
             'email' => 'siswa@gmail.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'email_verified_at' => now(),
+            'password' => \Illuminate\Support\Facades\Hash::make('Admin123'),
             'role' => 'siswa',
         ]);
     }
