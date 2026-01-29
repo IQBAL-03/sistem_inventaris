@@ -9,7 +9,7 @@
                 <button type="submit" class="px-6 py-2.5 bg-red-100 text-red-600 hover:bg-red-200 rounded-full font-bold text-xs uppercase tracking-widest transition-all">
                     Bersihkan Log
                 </button>
-            </form>
+            </form >
         </div>
     </x-slot>
 
