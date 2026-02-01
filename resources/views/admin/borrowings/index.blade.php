@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot:title>Daftar Peminjaman</x-slot:title>
 
 
     <div class="py-12">
@@ -54,7 +55,7 @@
                                                 @elseif($borrowing->status == 'approved') bg-blue-100 text-blue-600 
                                                 @elseif($borrowing->status == 'rejected') bg-red-100 text-red-600 
                                                 @else bg-green-100 text-green-600 @endif">
-                                                @if($borrowing->status == 'pending') Tertunda
+                                                @if($borrowing->status == 'pending') Menunggu
                                                 @elseif($borrowing->status == 'approved') Disetujui
                                                 @elseif($borrowing->status == 'rejected') Ditolak
                                                 @elseif($borrowing->status == 'returned') Dikembalikan

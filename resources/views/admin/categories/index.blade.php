@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot:title>Kelola Kategori</x-slot:title>
 
 
     <div class="py-12">

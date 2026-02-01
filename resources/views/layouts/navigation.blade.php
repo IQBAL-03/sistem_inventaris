@@ -18,7 +18,7 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                         <x-nav-link :href="route('admin.items.index')" :active="request()->routeIs('admin.items.*')" class="text-gray-800 font-bold tracking-tight">
-                            {{ __('Barang') }}
+                            {{ __('Kelola Barang') }}
                         </x-nav-link>
                         <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Kategori') }}
@@ -31,7 +31,7 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                         <x-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')" class="text-gray-800 font-bold tracking-tight">
-                            {{ __('Katalog') }}
+                            {{ __('Barang') }}
                         </x-nav-link>
                         <x-nav-link :href="route('siswa.borrowings.index')" :active="request()->routeIs('siswa.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Riwayat') }}
@@ -102,7 +102,7 @@
 
             @if(Auth::user()->role === 'admin')
                 <x-responsive-nav-link :href="route('admin.items.index')" :active="request()->routeIs('admin.items.*')">
-                    {{ __('Barang') }}
+                    {{ __('Kelola Barang') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
                     {{ __('Kategori') }}
@@ -113,7 +113,7 @@
 
             @else
                 <x-responsive-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')">
-                    {{ __('Katalog') }}
+                    {{ __('Barang') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('siswa.borrowings.index')" :active="request()->routeIs('siswa.borrowings.*')">
                     {{ __('Riwayat') }}

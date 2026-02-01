@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot:title>Kelola Barang</x-slot:title>
 
 
     <div class="py-12">
@@ -16,6 +17,13 @@
 
             <div class="glass-card overflow-hidden rounded-[2.5rem] border-none shadow-2xl">
                 <div class="p-8 text-gray-900">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-black text-gray-800 tracking-tighter uppercase">Daftar Barang</h2>
+                        <a href="{{ route('admin.items.create') }}" class="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-2xl font-bold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:border-indigo-900 focus:ring ring-indigo-300 disabled:opacity-25 transition ease-in-out duration-150 shadow-lg shadow-indigo-500/30">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                            Tambah Barang
+                        </a>
+                    </div>
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200/30">
                             <thead>

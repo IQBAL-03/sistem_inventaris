@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot:title>Barang</x-slot:title>
 
 
     <div class="py-12">

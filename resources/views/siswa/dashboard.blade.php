@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot:title>Dashboard Siswa</x-slot:title>
+    <x-slot:title>Dashboard</x-slot:title>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-12">
             <!-- Welcome Section -->
