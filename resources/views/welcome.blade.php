@@ -166,7 +166,7 @@
         </section>
         
         <footer class="py-12 text-center text-sm text-slate-400">
-            &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+            &copy; {{ date('Y') }} {{ config('app.name') }}
         </footer>
     </div>
     

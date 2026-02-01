@@ -30,7 +30,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <x-text-input id="email" class="block w-full pl-11 pr-4 py-3 bg-white border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-2xl transition-all" type="email" name="email" :value="old('email')" required placeholder="nama@sekolah.sch.id" />
+                <x-text-input id="email" class="block w-full pl-11 pr-4 py-3 bg-white border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-2xl transition-all" type="email" name="email" :value="old('email')" required placeholder="nama@gmail.com" />
             </div>
             <x-input-error :messages="$errors->get('email')" class="mt-1 ml-1" />
         </div>

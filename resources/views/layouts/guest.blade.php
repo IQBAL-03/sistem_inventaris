@@ -21,8 +21,9 @@
     <body class="font-sans text-gray-900 antialiased bg-gray-50 min-h-screen">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
             <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20" />
+                <a href="/" class="flex flex-col items-center space-y-3">
+                    <x-application-logo class="w-20 h-20 fill-current text-indigo-600" />
+                    <span class="text-2xl font-black text-gray-900 tracking-tighter uppercase">Inventaris<span class="text-indigo-600">Lab</span></span>
                 </a>
             </div>
 
