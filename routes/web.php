@@ -26,9 +26,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     Route::post('/borrowings/{borrowing}/reject', [App\Http\Controllers\Admin\BorrowingController::class, 'reject'])->name('borrowings.reject');
     Route::post('/borrowings/{borrowing}/returned', [App\Http\Controllers\Admin\BorrowingController::class, 'returned'])->name('borrowings.returned');
     
-    // Log Routes
-    Route::get('/logs', [App\Http\Controllers\Admin\LogController::class, 'index'])->name('logs.index');
-    Route::post('/logs/clear', [App\Http\Controllers\Admin\LogController::class, 'clear'])->name('logs.clear');
+
 });
 
 // Siswa Routes

@@ -1,29 +1,25 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-black text-2xl text-gray-900 leading-tight uppercase tracking-tighter">
-            Manage <span class="text-indigo-600">Categories</span>
-        </h2>
-    </x-slot>
+
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-12">
             @if(session('success'))
                 <div class="glass-card border-l-4 border-green-500 p-4 animate-float" role="alert">
-                    <p class="font-bold text-green-700">Success!</p>
+                    <p class="font-bold text-green-700">Berhasil!</p>
                     <p class="text-green-600 text-sm">{{ session('success') }}</p>
                 </div>
             @endif
 
             <!-- Add Category Card -->
             <div class="glass-card p-10 rounded-[2.5rem]">
-                <h3 class="text-lg font-black text-gray-800 uppercase tracking-widest mb-6">Create New Category</h3>
+                <h3 class="text-lg font-black text-gray-800 uppercase tracking-widest mb-6">Buat Kategori Baru</h3>
                 <form action="{{ route('admin.categories.store') }}" method="POST" class="flex flex-col sm:flex-row gap-6">
                     @csrf
                     <div class="flex-1">
-                        <x-text-input name="nama_kategori" placeholder="e.g. Perangkat Jaringan" class="w-full border-none bg-gray-50/50 rounded-2xl focus:ring-2 focus:ring-indigo-500 py-4" required />
+                        <x-text-input name="nama_kategori" placeholder="Contoh: Perangkat Jaringan" class="w-full border-none bg-gray-50/50 rounded-2xl focus:ring-2 focus:ring-indigo-500 py-4" required />
                         <x-input-error :messages="$errors->get('nama_kategori')" class="mt-2" />
                     </div>
-                    <button type="submit" class="btn-gradient px-10">Add Category</button>
+                    <button type="submit" class="btn-gradient px-10">Tambah Kategori</button>
                 </form>
             </div>
 
@@ -34,8 +30,8 @@
                         <table class="min-w-full divide-y divide-gray-200/30">
                             <thead>
                                 <tr class="text-left font-bold">
-                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Category Name</th>
-                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em] text-right">Actions</th>
+                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Nama Kategori</th>
+                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em] text-right">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100/20">
@@ -51,7 +47,7 @@
                                             <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all font-bold text-xs uppercase" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
+                                                <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all font-bold text-xs uppercase" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -1,14 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-black text-2xl text-gray-900 leading-tight uppercase tracking-tighter">
-                Daftar <span class="text-blue-600">Aset Inventaris</span>
-            </h2>
-            <a href="{{ route('admin.items.create') }}" class="btn-gradient">
-                + Tambah Aset Baru
-            </a>
-        </div>
-    </x-slot>
+
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -29,7 +20,7 @@
                         <table class="min-w-full divide-y divide-gray-200/30">
                             <thead>
                                 <tr class="text-left font-bold">
-                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Asset</th>
+                                    <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Barang</th>
                                     <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Kategori</th>
                                     <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Merk</th>
                                     <th class="px-6 py-4 text-xs font-black text-gray-600 uppercase tracking-[0.2em]">Stok</th>

@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white/70 backdrop-blur-xl border-b border-white/30 sticky top-0 z-50">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 sticky top-0 z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20">
@@ -26,9 +26,7 @@
                         <x-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Peminjaman') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('admin.logs.index')" :active="request()->routeIs('admin.logs.*')" class="text-gray-800 font-bold tracking-tight">
-                            {{ __('Logs') }}
-                        </x-nav-link>
+
                     @else
                         <x-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')" class="text-gray-800 font-bold tracking-tight">
                             {{ __('Katalog') }}
@@ -57,8 +55,9 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Profil') }}
                         </x-dropdown-link>
+
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -103,9 +102,7 @@
                 <x-responsive-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')">
                     {{ __('Peminjaman') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('admin.logs.index')" :active="request()->routeIs('admin.logs.*')">
-                    {{ __('Logs') }}
-                </x-responsive-nav-link>
+
             @else
                 <x-responsive-nav-link :href="route('siswa.inventory.index')" :active="request()->routeIs('siswa.inventory.*')">
                     {{ __('Katalog') }}
@@ -125,8 +122,9 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Profil') }}
                 </x-responsive-nav-link>
+
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
