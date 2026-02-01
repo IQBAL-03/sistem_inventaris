@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <x-slot:title>Verifikasi Email</x-slot:title>
     <div class="mb-8 text-center">
         <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-2">Verifikasi Email</h2>
         <p class="text-slate-500 text-sm">Terima kasih telah mendaftar! Sebelum memulai, silakan verifikasi alamat email Anda dengan mengklik tautan yang baru saja kami kirimkan ke email Anda.</p>

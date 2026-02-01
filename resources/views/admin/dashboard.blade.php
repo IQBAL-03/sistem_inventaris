@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-slot:title>Dashboard Admin</x-slot:title>
 
 
     <div class="py-12">

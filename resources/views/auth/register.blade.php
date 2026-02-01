@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <x-slot:title>Daftar</x-slot:title>
     <div class="mb-8 text-center" x-data="{ showPassword: false, showConfirm: false }">
         <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-2">Buat Akun Baru</h2>
         <p class="text-slate-500 text-sm">Daftar untuk mulai mengelola inventaris sekolah Anda</p>

@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <x-slot:title>Masuk</x-slot:title>
     <div class="mb-8 text-center" x-data="{ showPassword: false }">
         <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-2">Selamat Datang Kembali</h2>
         <p class="text-slate-500 text-sm">Silakan masuk ke akun Anda untuk mengelola inventaris</p>

@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <x-slot:title>Lupa Kata Sandi</x-slot:title>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('Lupa kata sandi Anda? Tidak masalah. Cukup beri tahu kami alamat email Anda dan kami akan mengirimkan tautan pengaturan ulang kata sandi yang memungkinkan Anda memilih yang baru.') }}
     </div>
