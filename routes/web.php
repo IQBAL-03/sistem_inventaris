@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
     if (auth()->user()->role === 'admin') {
         return redirect()->route('admin.dashboard');
     }
-    return redirect()->route('siswa.inventory.index');
+    return redirect()->route('siswa.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Admin Routes
@@ -31,6 +31,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
 
 // Siswa Routes
 Route::middleware(['auth', 'verified', 'role:siswa'])->prefix('siswa')->name('siswa.')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Siswa\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/inventory', [App\Http\Controllers\Siswa\InventoryController::class, 'index'])->name('inventory.index');
     Route::get('/borrowings', [App\Http\Controllers\Siswa\BorrowingController::class, 'index'])->name('borrowings.index');
     Route::post('/borrowings', [App\Http\Controllers\Siswa\BorrowingController::class, 'store'])->name('borrowings.store');
