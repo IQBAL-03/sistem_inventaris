@@ -5,10 +5,16 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-12">
             @if(session('success'))
-                <div class="glass-card border-l-4 border-green-500 p-4 animate-float" role="alert">
-                    <p class="font-bold text-green-700">Berhasil!</p>
-                    <p class="text-green-600 text-sm">{{ session('success') }}</p>
-                </div>
+                <x-notification type="success" :message="session('success')" />
+            @endif
+            @if(session('updated'))
+                <x-notification type="updated" :message="session('updated')" />
+            @endif
+            @if(session('deleted'))
+                <x-notification type="deleted" :message="session('deleted')" />
+            @endif
+            @if(session('error'))
+                <x-notification type="error" :message="session('error')" />
             @endif
 
             <!-- Add Category Card -->

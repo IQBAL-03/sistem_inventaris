@@ -5,16 +5,16 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if(session('success'))
-                <div class="mb-8 glass-card border-l-4 border-green-500 p-4 animate-float">
-                    <p class="font-bold text-green-700">Aksi Berhasil</p>
-                    <p class="text-green-600 text-sm">{{ session('success') }}</p>
-                </div>
+                <x-notification type="success" :message="session('success')" />
+            @endif
+            @if(session('updated'))
+                <x-notification type="updated" :message="session('updated')" />
+            @endif
+            @if(session('deleted'))
+                <x-notification type="deleted" :message="session('deleted')" />
             @endif
             @if(session('error'))
-                <div class="mb-8 glass-card border-l-4 border-red-500 p-4 animate-float">
-                    <p class="font-bold text-red-700">Gagal</p>
-                    <p class="text-red-600 text-sm">{{ session('error') }}</p>
-                </div>
+                <x-notification type="error" :message="session('error')" />
             @endif
 
             <div class="glass-card overflow-hidden rounded-[2.5rem]">

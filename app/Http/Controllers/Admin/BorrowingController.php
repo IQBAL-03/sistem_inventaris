@@ -16,7 +16,7 @@ class BorrowingController extends Controller
     public function approve(\App\Models\Borrowing $borrowing)
     {
         if ($borrowing->item->stok < $borrowing->jumlah) {
-            return back()->with('error', 'Insufficient stock.');
+            return back()->with('error', 'Stok tidak mencukupi.');
         }
 
         $borrowing->status = 'approved';
@@ -24,14 +24,14 @@ class BorrowingController extends Controller
 
         $borrowing->item->decrement('stok', $borrowing->jumlah);
 
-        return back()->with('success', 'Borrowing approved.');
+        return back()->with('success', 'Peminjaman disetujui.');
     }
 
     public function reject(\App\Models\Borrowing $borrowing)
     {
         $borrowing->status = 'rejected';
         $borrowing->save();
-        return back()->with('success', 'Borrowing rejected.');
+        return back()->with('deleted', 'Peminjaman ditolak.');
     }
 
     public function returned(\App\Models\Borrowing $borrowing)
@@ -41,6 +41,6 @@ class BorrowingController extends Controller
 
         $borrowing->item->increment('stok', $borrowing->jumlah);
 
-        return back()->with('success', 'Item marked as returned.');
+        return back()->with('success', 'Barang telah dikembalikan.');
     }
 }

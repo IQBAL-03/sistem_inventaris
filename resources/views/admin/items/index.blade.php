@@ -5,14 +5,16 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if(session('success'))
-                <div class="mb-8 glass-card border-l-4 border-green-500 p-6 animate-float rounded-3xl" role="alert">
-                    <div class="flex items-center space-x-3">
-                        <div class="p-2 bg-green-100 rounded-lg text-green-600">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <p class="font-bold text-green-700">{{ session('success') }}</p>
-                    </div>
-                </div>
+                <x-notification type="success" :message="session('success')" />
+            @endif
+            @if(session('updated'))
+                <x-notification type="updated" :message="session('updated')" />
+            @endif
+            @if(session('deleted'))
+                <x-notification type="deleted" :message="session('deleted')" />
+            @endif
+            @if(session('error'))
+                <x-notification type="error" :message="session('error')" />
             @endif
 
             <div class="glass-card overflow-hidden rounded-[2.5rem] border-none shadow-2xl">

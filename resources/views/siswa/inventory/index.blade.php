@@ -28,17 +28,16 @@
             </div>
 
             @if(session('success'))
-                <div class="mb-8 glass-card border-l-4 border-green-500 p-6 animate-float rounded-3xl" role="alert">
-                    <div class="flex items-center space-x-4">
-                        <div class="p-2 bg-green-100 rounded-lg text-green-600">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <div>
-                            <p class="font-black text-gray-800 text-lg leading-tight">Berhasil!</p>
-                            <p class="text-gray-500 text-sm font-medium">{{ session('success') }}</p>
-                        </div>
-                    </div>
-                </div>
+                <x-notification type="success" :message="session('success')" />
+            @endif
+            @if(session('updated'))
+                <x-notification type="updated" :message="session('updated')" />
+            @endif
+            @if(session('deleted'))
+                <x-notification type="deleted" :message="session('deleted')" />
+            @endif
+            @if(session('error'))
+                <x-notification type="error" :message="session('error')" />
             @endif
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">

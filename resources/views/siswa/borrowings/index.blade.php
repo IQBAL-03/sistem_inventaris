@@ -4,6 +4,18 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @if(session('success'))
+                <x-notification type="success" :message="session('success')" />
+            @endif
+            @if(session('updated'))
+                <x-notification type="updated" :message="session('updated')" />
+            @endif
+            @if(session('deleted'))
+                <x-notification type="deleted" :message="session('deleted')" />
+            @endif
+            @if(session('error'))
+                <x-notification type="error" :message="session('error')" />
+            @endif
             <div class="glass-card overflow-hidden rounded-[2.5rem] border-none shadow-2xl">
                 <div class="p-10 text-gray-900 overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200/30">
@@ -55,7 +67,7 @@
                                                 <svg class="mx-auto w-16 h-16 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                             </div>
                                             <p class="text-gray-400 font-black uppercase tracking-tighter">Riwayat peminjaman Anda masih kosong.</p>
-                                            <a href="{{ route('siswa.inventory.index') }}" class="inline-block text-blue-600 font-bold hover:underline">Lihat Katalog</a>
+                                            <a href="{{ route('siswa.inventory.index') }}" class="inline-block text-blue-600 font-bold hover:underline">Lihat Barang</a>
                                         </div>
                                     </td>
                                 </tr>

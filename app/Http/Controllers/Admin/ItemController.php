@@ -79,7 +79,7 @@ class ItemController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('admin.items.index')->with('success', 'Barang berhasil diperbarui!');
+        return redirect()->route('admin.items.index')->with('updated', 'Barang berhasil diperbarui!');
     }
 
     public function destroy(\App\Models\Item $item)
@@ -88,7 +88,7 @@ class ItemController extends Controller
             Storage::disk('public')->delete($item->gambar);
         }
         $item->delete();
-        return redirect()->route('admin.items.index')->with('success', 'Barang berhasil dihapus!');
+        return redirect()->route('admin.items.index')->with('deleted', 'Barang berhasil dihapus!');
     }
 
     private function uploadBase64Image($base64Data)

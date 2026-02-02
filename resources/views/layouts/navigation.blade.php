@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="flex items-center space-x-3">
+                    <a href="{{ url('/') }}" class="flex items-center space-x-3">
                         <x-application-logo class="block h-10 w-auto fill-current text-indigo-600" />
                         <span class="text-xl font-black text-gray-900 tracking-tighter uppercase">Inventaris <span class="text-indigo-600">Lab</span></span>
                     </a>
