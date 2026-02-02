@@ -61,15 +61,27 @@
 
                         <div class="md:col-span-2">
                             <x-input-label for="gambar_input" class="uppercase tracking-widest text-[10px] font-black text-gray-400 mb-2" value="Ganti Foto (Opsional)" />
-                            <div class="relative group">
-                                <label for="gambar_input" class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-blue-200 rounded-[2rem] cursor-pointer bg-blue-50/50 hover:bg-blue-100/50 transition-all overflow-hidden relative">
-                                    <div id="uploadPlaceholder" class="flex flex-col items-center justify-center pt-5 pb-6 text-blue-400">
-                                        <svg class="w-10 h-10 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <p class="text-sm font-bold uppercase tracking-widest">Klik untuk ganti & potong foto</p>
+                            <div id="imageUploadContainer" class="relative group">
+                                <!-- Upload Area (Hidden if image exists) -->
+                                <label for="gambar_input" id="uploadPlaceholder" class="{{ $item->gambar ? 'hidden' : '' }} flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-blue-200 rounded-[2.5rem] cursor-pointer bg-blue-50/50 hover:bg-blue-100/50 transition-all overflow-hidden group-hover:border-blue-400">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6 text-blue-400">
+                                        <div class="p-4 bg-white rounded-2xl shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                        </div>
+                                        <p class="text-sm font-bold uppercase tracking-widest text-center px-4">Klik untuk ganti & potong foto</p>
                                     </div>
-                                    <img id="previewImage" class="absolute inset-0 w-full h-full object-cover hidden">
                                     <input id="gambar_input" type="file" accept="image/*" class="hidden" name="gambar">
                                 </label>
+
+                                <!-- Preview Area (Shown if image exists) -->
+                                <div id="previewCard" class="{{ $item->gambar ? '' : 'hidden' }} relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-square max-w-[300px] mx-auto group/preview transition-all duration-500 transform">
+                                    <img id="previewImage" src="{{ $item->gambar ? asset('storage/'.$item->gambar) : '' }}" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover/preview:opacity-100 transition-opacity backdrop-blur-sm">
+                                        <label for="gambar_input" class="cursor-pointer bg-white text-slate-900 px-6 py-3 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-blue-600 hover:text-white transition-all transform translate-y-4 group-hover/preview:translate-y-0 duration-300">
+                                            Ganti Foto
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <x-input-error :messages="$errors->get('gambar')" class="mt-2" />
                         </div>
@@ -171,7 +183,9 @@
                 const base64Image = canvas.toDataURL('image/jpeg', 0.9);
                 croppedInput.value = base64Image;
                 preview.src = base64Image;
-                preview.classList.remove('hidden');
+                
+                // Show Card, Hide Placeholder
+                document.getElementById('previewCard').classList.remove('hidden');
                 placeholder.classList.add('hidden');
                 
                 closeCropModal();
