@@ -1,19 +1,19 @@
-# 🧪 Inventaris Lab
+# Inventaris Lab
 
 **Inventaris Lab** adalah web aplikasi modern berbasis Laravel yang dirancang khusus untuk manajemen aset dan peminjaman barang di laboratorium sekolah atau instansi secara efisien, transparan, dan real-time.
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-### 👨‍💼 Panel Administrator
+### Panel Administrator
 - **Dashboard Monitoring**: Pantau stok barang, jumlah siswa, dan permintaan peminjaman yang perlu disetujui dalam satu tampilan.
 - **Manajemen Barang (CRUD)**: Kelola data aset lengkap dengan sistem kategori dan merek.
 - **Sistem Crop Foto**: Unggah foto aset dengan fitur pemotongan (cropping) yang presisi untuk hasil yang rapi.
 - **Verifikasi Peminjaman**: Setujui atau tolak permintaan peminjaman dari siswa dengan sistem status yang jelas.
 - **Sistem Notifikasi**: Umpan balik visual yang dinamis (Hijau/Kuning/Orange/Merah) untuk setiap aksi.
 
-### 🎓 Panel Siswa
+### Panel Siswa
 - **Eksplorasi Barang**: Cari dan lihat ketersediaan barang laboratorium dengan tampilan kartu yang modern.
 - **Booking & Pinjam**: Ajukan peminjaman barang secara mandiri.
 - **Riwayat Peminjaman**: Pantau status barang yang sedang dipinjam atau sudah dikembalikan.
@@ -21,7 +21,7 @@
 
 ---
 
-## 🚀 Teknologi Utama
+## Teknologi Utama
 
 - **Framework**: [Laravel 11](https://laravel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) (Vanilla & Glassmorphism)
@@ -33,7 +33,7 @@
 
 ---
 
-## 🛠️ Instalasi
+## Instalasi
 
 1.  **Clone Repository**
     ```bash
@@ -66,8 +66,8 @@
 
 ---
 
-## 🎨 UI/UX Highlights
-- **Premium Aesthetics**: Menggunakan palet warna yang harmonis, efek *blur glassmorphism*, dan animasi transisi halus.
+## UI/UX Highlights
+- **Aesthetics**: Menggunakan palet warna yang harmonis, efek *blur glassmorphism*, dan animasi transisi halus.
 - **Interaktif**: Notifikasi yang bisa di-*dismiss*, tombol intip *password*, dan preview foto yang profesional.
 - **Responsif**: Dapat diakses dengan nyaman melalui perangkat mobile maupun desktop.
 
