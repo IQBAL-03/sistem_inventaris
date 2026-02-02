@@ -20,10 +20,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn-gradient px-12 py-4">Cari Aset</button>
-                    @if(request('search') || request('category'))
-                        <a href="{{ route('siswa.inventory.index') }}" class="px-6 py-4 text-gray-400 font-bold uppercase text-xs tracking-widest hover:text-blue-600 transition">Reset</a>
-                    @endif
+                    <div class="flex flex-wrap gap-4 items-end mt-4">
+                        <button type="submit" class="btn-gradient px-12 py-4">Cari Aset</button>
+                        @if(request('search') || request('category'))
+                            <a href="{{ route('siswa.inventory.index') }}" class="px-8 py-4 bg-gray-100 text-gray-400 font-bold uppercase text-[10px] tracking-widest rounded-2xl hover:bg-gray-200 transition">Reset</a>
+                        @endif
+                    </div>
                 </form>
             </div>
 

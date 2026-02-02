@@ -11,12 +11,14 @@ class InventoryController extends Controller
     {
         $query = \App\Models\Item::with('category');
 
-        if ($request->has('search')) {
-            $query->where('nama_barang', 'like', '%'.$request->search.'%')
+        if ($request->filled('search')) {
+            $query->where(function($q) use ($request) {
+                $q->where('nama_barang', 'like', '%'.$request->search.'%')
                   ->orWhere('merk', 'like', '%'.$request->search.'%');
+            });
         }
 
-        if ($request->has('category') && $request->category != '') {
+        if ($request->filled('category')) {
             $query->where('category_id', $request->category);
         }
 
