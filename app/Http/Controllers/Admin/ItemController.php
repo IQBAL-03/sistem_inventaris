@@ -28,7 +28,7 @@ class ItemController extends Controller
             'nama_barang' => 'required',
             'merk' => 'required',
             'stok' => 'required|integer',
-            'gambar' => 'nullable|image|max:2048',
+            'gambar' => 'nullable|image|max:20480',
             'cropped_image' => 'nullable',
         ]);
 
@@ -58,7 +58,7 @@ class ItemController extends Controller
             'nama_barang' => 'required',
             'merk' => 'required',
             'stok' => 'required|integer',
-            'gambar' => 'nullable|image|max:2048',
+            'gambar' => 'nullable|image|max:20480',
             'cropped_image' => 'nullable',
         ]);
 
