@@ -1,6 +1,6 @@
 # Inventaris Lab
 
-**Inventaris Lab** adalah web aplikasi modern berbasis Laravel yang dirancang khusus untuk manajemen aset dan peminjaman barang di laboratorium sekolah atau instansi secara efisien, transparan, dan real-time.
+**Inventaris Lab** adalah web aplikasi modern berbasis Laravel yang dirancang khusus untuk manajemen aset dan peminjaman barang di laboratorium Komputer sekolah.
 
 ---
 
