@@ -48,7 +48,7 @@
                 <!-- Catalog Items -->
                 <div class="glass-card p-8 rounded-[2rem] flex items-center justify-between group hover:border-purple-200 transition-colors">
                     <div>
-                        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Total Aset Lab</p>
+                        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Total Barang Lab</p>
                         <h3 class="text-5xl font-black text-purple-600 leading-none">{{ $totalItems }}</h3>
                     </div>
                     <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-500 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">

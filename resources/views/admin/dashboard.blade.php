@@ -80,7 +80,7 @@
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors uppercase tracking-tighter">Kelola Barang</h4>
-                        <p class="text-gray-500 text-sm mt-2 font-medium">Manajemen aset, stok, dan gambar inventaris.</p>
+                        <p class="text-gray-500 text-sm mt-2 font-medium">Manajemen barang, stok, dan gambar inventaris.</p>
                     </div>
                 </a>
 

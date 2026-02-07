@@ -4,7 +4,7 @@
 
     <x-slot name="header">
         <h2 class="font-black text-2xl text-gray-900 leading-tight uppercase tracking-tighter">
-            Edit <span class="text-blue-600">Aset</span>
+            Edit <span class="text-blue-600">Barang</span>
         </h2>
     </x-slot>
 
@@ -32,7 +32,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="md:col-span-2">
-                            <x-input-label for="nama_barang" class="uppercase tracking-widest text-[10px] font-black text-gray-400 mb-2" value="Nama Aset" />
+                            <x-input-label for="nama_barang" class="uppercase tracking-widest text-[10px] font-black text-gray-400 mb-2" value="Nama Barang" />
                             <x-text-input id="nama_barang" class="block w-full border-none bg-gray-50/50 rounded-2xl focus:ring-2 focus:ring-blue-500 py-4" type="text" name="nama_barang" :value="old('nama_barang', $item->nama_barang)" required />
                             <x-input-error :messages="$errors->get('nama_barang')" class="mt-2" />
                         </div>
@@ -90,7 +90,7 @@
                     <div class="flex items-center justify-end space-x-4 pt-6 border-t border-gray-100">
                         <a href="{{ route('admin.items.index') }}" class="px-6 py-3 text-gray-400 font-bold uppercase text-xs tracking-widest hover:text-gray-600 transition">Batal</a>
                         <button type="submit" class="btn-gradient px-12 py-4">
-                            Perbarui Aset
+                            Perbarui Barang
                         </button>
                     </div>
                 </form>

@@ -85,7 +85,7 @@
                                 Ribet.</span>
                         </h1>
                         <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                            Platform modern untuk manajemen aset laboratorium sekolah. Pantau stok, ajukan peminjaman,
+                            Platform modern untuk manajemen barang laboratorium sekolah. Pantau stok, ajukan peminjaman,
                             dan kelola inventaris secara real-time. Efisiensi dimulai dari sini.
                         </p>
                     </div>
