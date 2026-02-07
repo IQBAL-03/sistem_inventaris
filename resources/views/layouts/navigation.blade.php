@@ -24,7 +24,7 @@
                             {{ __('Kategori') }}
                         </x-nav-link>
                         <x-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')" class="text-gray-800 font-bold tracking-tight">
-                            {{ __('Peminjaman') }}
+                            {{ __('Verifikasi') }}
                         </x-nav-link>
                     @else
                         <x-nav-link :href="route('siswa.dashboard')" :active="request()->routeIs('siswa.dashboard')" class="text-gray-800 font-bold tracking-tight">
@@ -108,7 +108,7 @@
                     {{ __('Kategori') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('admin.borrowings.index')" :active="request()->routeIs('admin.borrowings.*')">
-                    {{ __('Peminjaman') }}
+                    {{ __('Verifikasi') }}
                 </x-responsive-nav-link>
 
             @else
