@@ -48,6 +48,7 @@
                                 class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">
                                 Dashboard
                             </a>
+                            
                         @else
                             <a href="{{ route('login') }}"
                                 class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors hidden sm:block">
