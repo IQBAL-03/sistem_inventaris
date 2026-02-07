@@ -2,11 +2,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
-    <x-slot name="header">
-        <h2 class="font-black text-2xl text-gray-900 leading-tight uppercase tracking-tighter">
-            Edit <span class="text-blue-600">Barang</span>
-        </h2>
-    </x-slot>
 
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
